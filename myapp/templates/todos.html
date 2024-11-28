@@ -1,9 +1,13 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block content %}
 <h1>Todo List</h1>
-<ul>
+<ul class="todo-list">
     {% for todo in todos %}
     <li>
-        {{ todo.title}}: {%if todo.completed%}Completed{% else %}Not completed{% endif %}
+        <span class="todo-title">{{ todo.title }}</span>
+        <span class="todo-status">
+            {% if todo.completed %}Completed{% else %}Not completed{% endif %}
+        </span>
     </li>
     {% endfor %}
 </ul>
